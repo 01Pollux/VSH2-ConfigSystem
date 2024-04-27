@@ -4,6 +4,7 @@
 #include <cfgmap>
 #include <tf2attributes>
 #include <tf2utils>
+#include <morecolors>
 
 #pragma semicolon 1
 #pragma newdecls required
