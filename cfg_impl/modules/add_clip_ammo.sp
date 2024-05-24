@@ -55,9 +55,8 @@ public Action Timer_ResetClip(Handle hTimer, DataPack data)
 
 		SetClip(calling_player_idx, slot, currentclip);
 	}
-	CloseHandle(data);
 
-	return Plugin_Continue;
+	return Plugin_Stop;
 }
 
 public Action ConfigEvent_AddAmmo(EventMap args, ConfigEventType_t event_type)
@@ -148,7 +147,5 @@ public Action Timer_ResetClipEnergy(Handle hTimer, DataPack data)
 		SetEntPropFloat(weapon, Prop_Send, "m_flEnergy", cur_energy);
 	}
 
-	CloseHandle(data);
-
-	return Plugin_Continue;
+	return Plugin_Stop;
 }
