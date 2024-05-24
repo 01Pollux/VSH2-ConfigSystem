@@ -434,6 +434,9 @@ void ConfigEvent_OnPlayerHurt(const VSH2Player player, const VSH2Player victim, 
 		ConfigSys.Params.SetValue("player", player);
 		ConfigSys.Params.SetValue("victim", victim);
 		ConfigSys.Params.SetValue("event", event);
+		ConfigSys.Params.SetValue("damage", event.GetInt("damageamount"));
+		ConfigSys.Params.SetValue("custom", event.GetInt("custom"));
+		ConfigSys.Params.SetValue("weapon", event.GetInt("weaponid"));
 		ConfigEvent_ExecuteGlobals(CET_PlayerHurt);
 	}
 	if (ConfigEvent_ShouldExecuteWeapons(CET_PlayerHurt))
@@ -441,6 +444,9 @@ void ConfigEvent_OnPlayerHurt(const VSH2Player player, const VSH2Player victim, 
 		ConfigSys.Params.SetValue("player", player);
 		ConfigSys.Params.SetValue("victim", victim);
 		ConfigSys.Params.SetValue("event", event);
+		ConfigSys.Params.SetValue("damage", event.GetInt("damageamount"));
+		ConfigSys.Params.SetValue("custom", event.GetInt("custom"));
+		ConfigSys.Params.SetValue("weapon", event.GetInt("weaponid"));
 		ConfigEvent_ExecuteWeapons(player, player.index, CET_PlayerHurt);
 	}
 }
