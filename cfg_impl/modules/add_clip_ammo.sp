@@ -116,7 +116,7 @@ public Action ConfigEvent_SetClipEnergy(EventMap args, ConfigEventType_t event_t
 	float duration; args.GetFloat("duration", duration);
 
 	int weapon = TF2Util_GetPlayerLoadoutEntity(calling_player_idx, slot);
-	if (IsValidEdict(weapon))
+	if (IsValidEdict(weapon) && HasEntProp(weapon, Prop_Send, "m_flEnergy"))
 	{
 		SetEntPropFloat(weapon, Prop_Send, "m_flEnergy", clip);
 
